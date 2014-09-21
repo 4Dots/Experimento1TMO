@@ -7,6 +7,8 @@ package fourDots.TMO.Services;
 
 import facebook4j.*;
 import facebook4j.auth.AccessToken;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author estudiante
@@ -18,6 +20,7 @@ public class FacebookServices
     
     private Facebook fb;
     private AccessToken OAuthUserToken;
+    private Object [] userLikes;
     
     private static String APP_ID = "348405295336411";
     private static String APP_SECRET = "f3dc80a87498a9c645b286018756491d";
@@ -43,6 +46,20 @@ public class FacebookServices
         {
             return fbsSingleton;
         }
+    }
+    
+    public Object [] retrieveLikes()
+    {
+        try
+        {
+            userLikes = fb.getUserLikes().toArray();
+            
+        }
+        catch (FacebookException ex)
+        {
+            Logger.getLogger(FacebookServices.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
     }
     
 }

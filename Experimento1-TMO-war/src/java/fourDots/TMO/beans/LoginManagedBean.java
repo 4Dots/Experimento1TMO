@@ -28,7 +28,7 @@ public class LoginManagedBean
      */
     public LoginManagedBean()
     {
-        
+        fbs = FacebookServices.getInstance();
     }
     
     public void createInstances()

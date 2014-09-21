@@ -11,9 +11,10 @@
         <title>Tu Mejor Opción</title>
     </h:head>
     <h:body>
-        asdasdsd
-            <ice:commandLink value="Iniciar" action="#{loginManagedBean.createInstances}"/>
-            <ace:linkButton value="Iniciar" action="#{loginManagedBean.createInstances}"/>
+        <h:form>
+            <h:inputText></h:inputText>
+            <h:commandButton value="Submit" action="#{loginManagedBean.createInstances}"></h:commandButton>
+        </h:form>
     </h:body>
 </html>
 
